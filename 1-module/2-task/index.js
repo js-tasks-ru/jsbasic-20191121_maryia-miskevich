@@ -1,6 +1,8 @@
 /**
  * Эту функцию трогать не нужно
  */
+'use strict';
+
 function print(text) {
   console.log(text);
 }
@@ -10,10 +12,12 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
+  return ((name !== null) && (name !== undefined) && (name.length >= 4) && (name.indexOf(' ') === -1));
 }
 
+
 function sayHello() {
-  const userName = prompt('Введите ваше имя');
+  const userName = prompt('Введите ваше имя', '');
 
   if (isValid(userName)) {
     print(`Welcome back, ${userName}!`);
@@ -21,3 +25,6 @@ function sayHello() {
     print('Некорректное имя');
   }
 }
+
+sayHello();
+
